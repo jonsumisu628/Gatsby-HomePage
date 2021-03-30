@@ -1,5 +1,6 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 
 import Layout from "../components/layout/layout";
 import Footer from "../components/Footer";
@@ -66,6 +67,11 @@ const Img = styled.img`
 export default function Home() {
     return (
         <Layout>
+            <Helmet>
+                <title>JohnSmith HomePage</title>
+                <meta name="description" content="johnsmithのホームページ" />
+                <html lang="ja" />
+            </Helmet>
             <Body>
                 <Main>
                     <Text>

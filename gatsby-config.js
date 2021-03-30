@@ -11,6 +11,7 @@ require('dotenv').config({
 module.exports = {
     /* Your site config here */
     plugins: [
+        `gatsby-plugin-react-helmet`,
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-image`,
