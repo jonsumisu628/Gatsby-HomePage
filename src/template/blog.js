@@ -49,6 +49,16 @@ const Main = styled.div`
   }
 `;
 
+const BlogPageLink = styled(Link)`
+  text-decoration: none;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  color: #696969;
+  &:hover {
+      text-shadow: 1px 1px 1px;
+      transition: 0.5s;
+  }
+`;
+
 export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: {eq: $slug}) {
@@ -91,6 +101,7 @@ const Blog = props => {
                     <h1>{props.data.contentfulBlogPost.title}</h1>
                     <p>{props.data.contentfulBlogPost.date}</p>
                     {renderRichText(props.data.contentfulBlogPost.description, options)}
+                    <BlogPageLink to="/blog">BlogPageに戻る</BlogPageLink>
                 </Main>
                 <Footer />
             </Body>
