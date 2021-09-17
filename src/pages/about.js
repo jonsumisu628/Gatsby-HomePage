@@ -45,7 +45,8 @@ const Text = styled.div`
 
 const Heading = styled.p`
   margin: 12px 0px 12px 0px;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  // font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  font-family: serif;
   font-weight: bold;
   font-size: 21px;
   // 1920x1080 PC
@@ -56,7 +57,8 @@ const Heading = styled.p`
 
 const Content = styled.p`
   margin: 18px 0px 38px 0px;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  // font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  font-family: serif;
   font-size: 21px;
   line-height: 30px;
   // 1920x1080 PC

@@ -5,6 +5,7 @@ import Giticon from "./Giticon";
 import Qiitaicon from "./Qiitaicon";
 
 const Body = styled.div`
+  font-family: serif;
   width: 100%;
   display: flex;
   align-items: center;

@@ -26,7 +26,8 @@ const Body = styled.div`
 
 const H2 = styled.h2`
   margin: 34px 0px 0px 0px;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  // font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  font-family: serif;
   font-size: 36px;
   color: #696969;
 
@@ -43,7 +44,8 @@ const H2 = styled.h2`
 
 const StyledLink = styled(Link)`
   margin: 20px 0px 0px 0px;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  // font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  font-family: serif;
   font-size: 26px;
   color: #696969;
   text-decoration: none;

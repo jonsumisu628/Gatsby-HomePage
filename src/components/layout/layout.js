@@ -11,7 +11,7 @@ const Body = styled.div`
 `;
 
 const Left = styled.div`
-  width: 20%;
+  width: 15%;
   background-color: #F0F2F4;
   box-shadow: 5px 0 3px #dcdcdc;
   z-index: 2;
@@ -25,7 +25,7 @@ const Left = styled.div`
 `;
 
 const Light = styled.div`
-  width: 80%;
+  width: 85%;
   overflow-y: scroll;
   z-index: 1;
 

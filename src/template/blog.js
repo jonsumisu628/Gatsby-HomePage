@@ -21,6 +21,7 @@ const Body = styled.div`
 `;
 
 const Main = styled.div`
+  font-family: serif;
   margin: 30px 60px 30px 60px;
   padding: 30px;
   display: flex;
@@ -51,7 +52,8 @@ const Main = styled.div`
 
 const BlogPageLink = styled(Link)`
   text-decoration: none;
-  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  // font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  font-family: serif;
   color: #696969;
   &:hover {
       text-shadow: 1px 1px 1px;
