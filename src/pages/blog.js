@@ -19,6 +19,13 @@ const Main = styled.div`
   align-items: center;
   flex: 1;
   font-family: serif;
+
+  // iPhone
+  @media (max-width: 428px) and (max-height: 926px) {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const StyledLink = styled(Link)`
