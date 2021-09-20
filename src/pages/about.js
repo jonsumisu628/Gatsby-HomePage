@@ -42,7 +42,7 @@ const Text = styled.div`
   // iPhone
   @media (max-width: 428px) and (max-height: 926px) {
     margin: 40px 40px 0px 40px;
-    width: 295px;
+    width: 100%;
   }
 `;
 
