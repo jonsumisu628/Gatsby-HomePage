@@ -5,21 +5,33 @@ import SidebarIcon from '../SidebarIcon';
 
 const Body = styled.div`
   display: flex;
-
-  @media (max-width: 428px) and (max-height: 926px){
-    flex-direction: column;
-  }
 `;
 
 const Main = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+
+  @media (max-width: 428px) and (max-height: 926px) {
+    position: relative;
+    z-index: 1;
+  }
 `;
 
 const StyleSidebarIcon = styled.div`
   margin: 30px;
   height: 30px;
+
+  @media (max-width: 428px) and (max-height: 926px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+`;
+
+const StyledMenu = styled(Menu)`
+
 `;
 
 export default class Layout extends Component {
@@ -40,7 +52,7 @@ export default class Layout extends Component {
     render() {
         return (
             <Body>
-                <Menu isOpen={this.state.isOpen} />
+                <StyledMenu isOpen={this.state.isOpen} />
                 <StyleSidebarIcon>
                     <SidebarIcon
                         isOpen={this.state.isOpen}

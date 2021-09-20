@@ -4,12 +4,11 @@ import {graphql, Link} from "gatsby";
 import {BLOCKS, INLINES} from "@contentful/rich-text-types";
 import {renderRichText} from "gatsby-source-contentful/rich-text";
 
-
-
 import Layout from "../components/layout/layout";
-import Footer from "../components/Footer";
+
 
 const Body = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -105,7 +104,6 @@ const Blog = props => {
                     {renderRichText(props.data.contentfulBlogPost.description, options)}
                     <BlogPageLink to="/blog">BlogPageに戻る</BlogPageLink>
                 </Main>
-                <Footer />
             </Body>
         </Layout>
     )

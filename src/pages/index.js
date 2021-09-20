@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Helmet from "react-helmet";
 
 import Layout from "../components/layout/layout";
-import Footer from "../components/Footer";
 
 import homeimg_pc from "../components/img/Home_PC.jpg";
 import homeimg_iphone from "../components/img/Home_iPhone.jpg";
@@ -25,7 +24,6 @@ const Main = styled.div`
 
   // iPhone
   @media (max-width: 428px) and (max-height: 926px){
-      margin-top: 44px;
       width: 100%;
       display: block;
       background-image: url(${homeimg_iphone});
@@ -109,7 +107,6 @@ export default function Home() {
 
                     <Img src={homeimg_pc} alt="img" />
                 </Main>
-                <Footer />
             </Body>
         </Layout >
     )

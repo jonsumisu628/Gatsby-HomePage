@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Link, graphql, useStaticQuery} from "gatsby"
 
 import Layout from "../components/layout/layout"
-import Footer from "../components/Footer";
+
 
 const Body = styled.div`
   display: flex;
@@ -18,11 +18,6 @@ const Main = styled.div`
   display: flex;
   align-items: center;
   flex: 1;
-
-  // iPhone
-  @media (max-width: 428px) and (max-height: 926px){
-      margin-top: 100px;
-  }
 `;
 
 const StyledLink = styled(Link)`
@@ -91,7 +86,6 @@ const BlogPage = () => {
                         )
                     })}
                 </Main>
-                <Footer />
             </Body>
         </Layout>
     )

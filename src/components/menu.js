@@ -3,6 +3,9 @@ import {Link} from "gatsby";
 import styled from "styled-components";
 import {Transition} from 'react-transition-group';
 
+import Giticon from "./Giticon";
+import Qiitaicon from "./Qiitaicon";
+
 const Sidebar = styled.div`
   width: 200px;
   padding-top: 25px;
@@ -12,6 +15,12 @@ const Sidebar = styled.div`
 const SidebarLink = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`
@@ -65,6 +74,10 @@ export default class SidebarContent extends Component {
                     <StyledLink to="/" activeClassName="active">Home </StyledLink>
                     <StyledLink to="/about" activeClassName="active">About</StyledLink>
                     <StyledLink to="/blog" activeClassName="active">Blog</StyledLink>
+                    <Icons>
+                        <Giticon />
+                        <Qiitaicon />
+                    </Icons>
                 </SidebarLink>
             )}
         </Transition>

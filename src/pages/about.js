@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components";
 
 import Layout from "../components/layout/layout";
-import Footer from "../components/Footer";
 
 import aboutimg_pc from "../components/img/About.jpg";
 import aboutimg_iphone from "../components/img/About_iPhone.png";
@@ -26,7 +25,6 @@ const Main = styled.div`
 
   // iPhone
   @media (max-width: 428px) and (max-height: 926px){
-    margin-top: 44px;
     width: 100%;
     justify-content: center;
     background-image: url(${aboutimg_iphone});
@@ -112,7 +110,6 @@ const About = () => {
                     </Text>
                     <Img src={aboutimg_pc} alt="img" />
                 </Main>
-                <Footer />
             </Body>
         </Layout>
     )
