@@ -19,6 +19,11 @@ const Main = styled.div`
   display: flex;
   align-items: center;
 
+    // 1920x1080 PC
+  @media (min-width: 1920px) and (min-height: 1080px){
+    justify-content: center;
+  }
+
   // iPhone
   @media (max-width: 428px) and (max-height: 926px){
     margin-top: 44px;
@@ -30,11 +35,11 @@ const Main = styled.div`
 
 const Text = styled.div`
   margin-top: 34px;
-  width: 500px;
+  width: 52%;
 
   // 1920x1080 PC
   @media (min-width: 1920px) and (min-height: 1080px){
-    width: 700px;
+      width: 53%;
   }
   // iPhone
   @media (max-width: 428px) and (max-height: 926px) {
@@ -68,7 +73,6 @@ const Content = styled.p`
 `;
 
 const Img = styled.img`
-  margin-bottom: 60px;
   height: 375px;
   width: 500px;
   // 1920x1080 PC
@@ -91,24 +95,23 @@ const About = () => {
                         <Heading>Who</Heading>
                         <Content>
                             NicName:John.Smith<br></br>
-            BirthDay:1999/6/28<br></br>
-            Location：Tokyo<br></br>
-            東京の専門学校に通っています。<br></br>
-            現在就職活動中...
-          </Content>
+                            BirthDay:1999/6/28<br></br>
+                            Location：Tokyo<br></br>
+                            東京の専門学校に通っています。<br></br>
+                            現在就職活動中...
+                        </Content>
                         <Heading>Study</Heading>
                         <Content>
                             JavaScript / HTML / CSS / React / Gatuby <br></br>
-            Vue / Svelte / Linux / Docker / Vagrant
-          </Content>
+                            Vue / Svelte / Linux / Docker / Vagrant
+                        </Content>
                         <Heading>Pastime</Heading>
                         <Content>
                             アニメやゲームが好きです。バスケやスノースポーツもやります。専門学校に入学してからは筋トレも始めました。
-          </Content>
+                        </Content>
                     </Text>
                     <Img src={aboutimg_pc} alt="img" />
                 </Main>
-
                 <Footer />
             </Body>
         </Layout>

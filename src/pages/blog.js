@@ -10,6 +10,7 @@ const Body = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
 `;
 
 const Main = styled.div`

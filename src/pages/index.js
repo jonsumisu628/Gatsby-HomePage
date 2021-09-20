@@ -17,10 +17,9 @@ const Body = styled.div`
 
 const Main = styled.div`
   position: relative;
-
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: columnw;
   align-items: center;
   justify-content: center;
 
@@ -39,8 +38,6 @@ const Text = styled.div`
 
   // 1920x1080 PC
   @media (min-width: 1920px) and (min-height: 1080px){
-    //font-size: 30px;
-
     width: 55%;
     position: absolute;
     text-align: center;
