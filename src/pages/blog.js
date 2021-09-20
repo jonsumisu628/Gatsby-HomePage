@@ -1,8 +1,9 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
-import {Link, graphql, useStaticQuery} from "gatsby"
+import {Link, graphql, useStaticQuery} from "gatsby";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
-import Layout from "../components/layout/layout"
+import Layout from "../components/layout/layout";
 
 
 const Body = styled.div`
@@ -14,17 +15,18 @@ const Body = styled.div`
 `;
 
 const Main = styled.div`
-  font-family: serif;
   display: flex;
   align-items: center;
   flex: 1;
+  font-family: serif;
 `;
 
 const StyledLink = styled(Link)`
   margin: 20px;
   padding: 20px;
   text-decoration: none;
-  height: 200px;
+  height: 220px;
+  width: 220px;
 
   h2,p {
       margin: 0px;
@@ -57,16 +59,14 @@ const BlogPage = () => {
     query {
         allContentfulBlogPost(sort: {order: DESC, fields: date}) {
             edges {
-              node {
-                title
-                slug
-                date(formatString: "MMMM Do YYYY")
-                media {
-                    resize(height: 150, width: 200) {
-                        src
+                node {
+                    title
+                    slug
+                    date(formatString: "MMMM Do YYYY")
+                    media {
+                        gatsbyImageData(height: 150, width: 200)
                     }
                 }
-              }
             }
         }
     }
@@ -81,7 +81,7 @@ const BlogPage = () => {
                             <StyledLink to={`/blog/${edge.node.slug}`}>
                                 <h2>{edge.node.title}</h2>
                                 <p>{edge.node.date}</p>
-                                <img src={edge.node.media.resize.src} alt={edge.node.media.title} />
+                                <GatsbyImage image={getImage(edge.node.media)} alt={edge.node.media.title} />
                             </StyledLink>
                         )
                     })}
