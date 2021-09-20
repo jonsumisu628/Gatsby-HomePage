@@ -30,10 +30,6 @@ const StyleSidebarIcon = styled.div`
   }
 `;
 
-const StyledMenu = styled(Menu)`
-
-`;
-
 export default class Layout extends Component {
     constructor(props) {
         super();
@@ -52,7 +48,7 @@ export default class Layout extends Component {
     render() {
         return (
             <Body>
-                <StyledMenu isOpen={this.state.isOpen} />
+                <Menu isOpen={this.state.isOpen} />
                 <StyleSidebarIcon>
                     <SidebarIcon
                         isOpen={this.state.isOpen}

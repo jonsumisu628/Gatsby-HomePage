@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {graphql, Link} from "gatsby";
 import {BLOCKS, INLINES} from "@contentful/rich-text-types";
 import {renderRichText} from "gatsby-source-contentful/rich-text";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout/layout";
 
@@ -61,23 +62,21 @@ const BlogPageLink = styled(Link)`
 `;
 
 export const query = graphql`
-  query($slug: String!) {
-    contentfulBlogPost(slug: {eq: $slug}) {
+query ($slug: String!) {
+  contentfulBlogPost(slug: {eq: $slug}) {
     title
     date(formatString: "MMMM Do YYYY")
     description {
       raw
       references {
         ... on ContentfulAsset {
-              __typename
-              contentful_id
-              resize(height:300,width:500) {
-                src
-              }
-            }
-            description
-            title
+          __typename
+          contentful_id
         }
+        description
+        title
+        gatsbyImageData
+      }
     }
   }
 }
@@ -91,7 +90,7 @@ const Blog = props => {
                     target: {slug, title},
                 },
             }) => <Link to={slug} activeClassName="active">{title}</Link>,
-            [BLOCKS.EMBEDDED_ASSET]: node => <img src={node.data.target.resize.src} alt={node.data.target.title} />,
+            [BLOCKS.EMBEDDED_ASSET]: node => <GatsbyImage image={getImage(node.data.target)} alt={node.data.target.title} />,
         },
     }
 
