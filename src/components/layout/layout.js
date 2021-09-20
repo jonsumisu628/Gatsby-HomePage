@@ -1,53 +1,56 @@
-import React from "react";
+import React, {Component} from 'react';
 import styled from "styled-components";
-
 import Menu from "../menu";
+import SidebarIcon from '../SidebarIcon';
 
 const Body = styled.div`
   display: flex;
+
   @media (max-width: 428px) and (max-height: 926px){
     flex-direction: column;
   }
 `;
 
-const Left = styled.div`
-  width: 15%;
-  background-color: #F0F2F4;
-  box-shadow: 5px 0 3px #dcdcdc;
-  z-index: 2;
-
-  // iPhone 上下分割 上
-  @media (max-width: 428px) and (max-height: 926px){
-    width:100%;
-    position: fixed;
-    box-shadow: 0px 5px 5px 0px #dcdcdc;
-  }
+const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
 `;
 
-const Light = styled.div`
-  width: 85%;
-  overflow-y: scroll;
-  z-index: 1;
-
-  // iPhone 上下分割 下
-  @media (max-width: 428px) and (max-height: 926px){
-    width:100%;
-  }
+const StyleSidebarIcon = styled.div`
+  margin: 30px;
+  height: 30px;
 `;
 
-const Layout = props => {
-    return (
-        <Body>
-            <Left>
-                <Menu/>
-            </Left>
+export default class Layout extends Component {
+    constructor(props) {
+        super();
+        this.children = props.children;
+    }
 
-            <Light>
-                {props.children}
-            </Light>
+    state = {
+        isOpen: false,
+    }
 
-        </Body>
-    )
+    toggleSidebar = () => {
+        this.setState(prevState => ({
+            isOpen: !prevState.isOpen
+        }))
+    }
+    render() {
+        return (
+            <Body>
+                <Menu isOpen={this.state.isOpen} />
+                <StyleSidebarIcon>
+                    <SidebarIcon
+                        isOpen={this.state.isOpen}
+                        handleClick={this.toggleSidebar}
+                    />
+                </StyleSidebarIcon>
+                <Main>
+                    {this.children}
+                </Main>
+            </Body>
+        )
+    }
 }
-
-export default Layout;

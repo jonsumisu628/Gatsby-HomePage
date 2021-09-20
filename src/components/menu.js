@@ -1,90 +1,85 @@
-import React from 'react';
+import React, {Component} from 'react'
 import {Link} from "gatsby";
 import styled from "styled-components";
+import {Transition} from 'react-transition-group';
 
-const Body = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-
-  // 1920x1080 PC
-  @media (min-width: 1920px) and (min-height: 1080px){
-      margin-top: 120px;
-  }
-
-  // iPhone
-  @media (max-width: 428px) and (max-height: 926px){
-      padding: 20px;
-      display: flex;
-      flex-direction: inherit;
-      justify-content: center;
-  }
+const Sidebar = styled.div`
+  width: 200px;
+  padding-top: 25px;
+  background-color: #4194C0;
 `;
 
-const H2 = styled.h2`
-  margin: 34px 0px 0px 0px;
-  // font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
-  font-family: serif;
-  font-size: 36px;
-  color: #696969;
-
-  // 1920x1080 PC
-  @media (min-width: 1920px) and (min-height: 1080px){
-      font-size: 46px;
-  }
-
-  // iPhone
-  @media (max-width: 428px) and (max-height: 926px){
-      margin: 0px auto 0px 0px;
-  }
+const SidebarLink = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledLink = styled(Link)`
-  margin: 20px 0px 0px 0px;
-  // font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
-  font-family: serif;
-  font-size: 26px;
-  color: #696969;
+  margin: 10px;
+  padding: 10px;
+  font-size: 30px;
+  color: white;
   text-decoration: none;
 
+  &.active {
+      background-color: #1e50a2;
+  }
+
   &:hover {
-      text-shadow: 1px 1px 1px;
-      transition: 0.5s;
-  }
-
-  &.active{
-      text-decoration: underline;
-      text-decoration-color: #4169e1;
-  }
-
-  // 1920x1080 PC
-  @media (min-width: 1920px) and (min-height: 1080px){
-      font-size: 36px;
-  }
-
-  // iPhone
-  @media (max-width: 428px) and (max-height: 926px){
-      margin: 0px 5px 0px 5px;
+      background-color: #1e50a2;
   }
 `;
 
+const duration = 800;
 
-
-
-const Menu = () => {
-    return (
-        <Body>
-            <H2>Menu</H2>
-
-            <StyledLink to="/" activeClassName="active">Home</StyledLink>
-            <StyledLink to="/about" activeClassName="active">About</StyledLink>
-            <StyledLink to="/blog" activeClassName="active">Blog</StyledLink>
-
-        </Body>
-    )
+const sidebarStyle = {
+    transition: `width ${duration}ms`
 }
 
-export default Menu;
+const sidebarTransitionStyles = {
+    entering: {width: 0},
+    entered: {width: '200px'},
+    exiting: {width: '200px'},
+    exited: {width: 0}
+}
+
+const linkStyle = {
+    transition: `opacity ${duration}ms`
+}
+
+const linkTransitionStyles = {
+    entering: {opacity: 0},
+    entered: {opacity: 1},
+    exiting: {opacity: 1},
+    exited: {opacity: 0},
+}
+
+export default class SidebarContent extends Component {
+    renderLinks = () => {
+        return <Transition in={this.props.isOpen} timeout={80}>
+            {(state) => (
+                <SidebarLink style={{
+                    ...linkStyle,
+                    ...linkTransitionStyles[state],
+                }}>
+                    <StyledLink to="/" activeClassName="active">Home </StyledLink>
+                    <StyledLink to="/about" activeClassName="active">About</StyledLink>
+                    <StyledLink to="/blog" activeClassName="active">Blog</StyledLink>
+                </SidebarLink>
+            )}
+        </Transition>
+    }
+
+    render() {
+        return <Transition in={this.props.isOpen} timeout={80}>
+            {(state) => (
+                <Sidebar style={{
+                    ...sidebarStyle,
+                    ...sidebarTransitionStyles[state]
+                }}>
+                    {this.renderLinks()}
+                </Sidebar>
+            )}
+        </Transition>
+    }
+}
