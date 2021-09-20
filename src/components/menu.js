@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, {Component} from "react"
 import {Link} from "gatsby";
 import styled from "styled-components";
-import {Transition} from 'react-transition-group';
+import {Transition} from "react-transition-group";
 
 import Giticon from "./Giticon";
 import Qiitaicon from "./Qiitaicon";
@@ -47,8 +47,8 @@ const sidebarStyle = {
 
 const sidebarTransitionStyles = {
     entering: {width: 0},
-    entered: {width: '200px'},
-    exiting: {width: '200px'},
+    entered: {width: "200px"},
+    exiting: {width: "200px"},
     exited: {width: 0}
 }
 
@@ -57,10 +57,16 @@ const linkStyle = {
 }
 
 const linkTransitionStyles = {
-    entering: {opacity: 0},
+    entering: {
+        opacity: 0,
+        pointerEvents: "none"
+    },
     entered: {opacity: 1},
     exiting: {opacity: 1},
-    exited: {opacity: 0},
+    exited: {
+        opacity: 0,
+        pointerEvents: "none"
+    },
 }
 
 export default class SidebarContent extends Component {
