@@ -100,8 +100,10 @@ const About = () => {
                         </Content>
                         <Heading>Study</Heading>
                         <Content>
-                            JavaScript / HTML / CSS / React / Gatuby <br></br>
-                            Vue / Svelte / Linux / Docker / Vagrant
+                            HTML / CSS / JavaScript / TypeScript<br></br>
+                            JAVA / Python / Ruby / C# / PHP<br></br>
+                            React / Vue / Gatuby / Svelte / Ruby on Rails<br></br>
+                            Linux / Docker / Virtualbox / Vagrant
                         </Content>
                         <Heading>Pastime</Heading>
                         <Content>
