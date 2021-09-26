@@ -7,7 +7,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout/layout";
 
-
 const Body = styled.div`
   width: 100%;
   display: flex;

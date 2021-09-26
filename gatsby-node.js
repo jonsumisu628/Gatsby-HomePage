@@ -1,7 +1,9 @@
 const path = require("path")
 
+//ページの生成
 module.exports.createPages = async ({graphql, actions}) => {
     const {createPage} = actions
+    //ブログ詳細ページ用のテンプレートの取得
     const blogTemplate = path.resolve("./src/template/blog.js")
     const res = await graphql(`
     query {
@@ -15,6 +17,7 @@ module.exports.createPages = async ({graphql, actions}) => {
     }
   `)
 
+    //各ページの生成
     res.data.allContentfulBlogPost.edges.forEach(edge => {
         createPage({
             component: blogTemplate,

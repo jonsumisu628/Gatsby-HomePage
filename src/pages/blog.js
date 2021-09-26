@@ -34,6 +34,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   height: 220px;
   width: 220px;
+  text-overflow: ellipsis;
 
   h2,p {
       margin: 0px;
