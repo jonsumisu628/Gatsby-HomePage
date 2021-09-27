@@ -12,6 +12,13 @@ const Main = styled.div`
   justify-content: center;
   width: 100%;
 
+  animation: fadeIn 2s normal;
+
+  @keyframes fadeIn {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+  }
+
   @media (max-width: 428px) and (max-height: 926px) {
     position: relative;
     z-index: 1;
