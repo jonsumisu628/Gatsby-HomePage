@@ -8,11 +8,10 @@ const Button = styled.button`
     background: transparent;
 `;
 
-// flagでメニューボタンの状態を管理（close時：三、open時：X）
-const SidebarIcon = ({handleClick,flag}) => {
+const SidebarIcon = ({handleClick}) => {
     return (
         <Button onClick={handleClick}>
-            <Hamburger toggled={flag}/>
+            <Hamburger />
         </Button>
     )
 }
