@@ -49,15 +49,15 @@ export default class Layout extends Component {
 
     toggleSidebar = (e) => {
         if (e.target.closest('.square')) {
-            console.log('内側');
             this.setState(prevState => ({
                 isOpen: !prevState.isOpen
             }))
+            console.log('内側');
         } else {
-            console.log('外側');
             this.setState(prevState => ({
                 isOpen: false
             }))
+            console.log('外側')
         }
     }
 
@@ -75,7 +75,6 @@ export default class Layout extends Component {
                 <StyleSidebarIcon className="square" handleClick={this.toggleSidebar}>
                     <SidebarIcon
                         isOpen={this.state.isOpen}
-                        flag={this.state.isOpen}
                     />
                 </StyleSidebarIcon>
                 <Main>
